@@ -77,7 +77,23 @@ type Tracking struct {
 	TrackedCount               int                    `json:"tracked_count,omitempty"`
 	LastMileTrackingSupported  *bool                  `json:"last_mile_tracking_supported,omitempty"`
 	ReturnToSender             bool                   `json:"return_to_sender,omitempty"`
-	Checkpoints                json.RawMessage        `json:"checkpoints"`
+	Checkpoints                []Checkpoint           `json:"checkpoints"`
+}
+
+type Checkpoint struct {
+	CreatedAt      time.Time `json:"created_at"`
+	Slug           string    `json:"slug"`
+	CheckpointTime string    `json:"checkpoint_time,omitempty"`
+	Location       string    `json:"location,omitempty"`
+	City           string    `json:"city,omitempty"`
+	State          string    `json:"state,omitempty"`
+	CountryISO3    string    `json:"country_iso3,omitempty"`
+	CountryName    string    `json:"country_name,omitempty"`
+	Zip            string    `json:"zip,omitempty"`
+	Tag            Tag       `json:"tag"`
+	Message        string    `json:"message"`
+	Subtag         string    `json:"subtag"`
+	SubtagMessage  string    `json:"subtag_message"`
 }
 
 type CreateTracking struct {
