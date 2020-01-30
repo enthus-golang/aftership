@@ -3,6 +3,7 @@ package aftership
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -132,4 +133,16 @@ func (a *AfterShip) CreateTracking(ctx context.Context, create CreateTracking) (
 	}
 
 	return &body.Data.Tracking, nil
+}
+
+func (a *AfterShip) DeleteTracking(ctx context.Context, slug, trackingNumber string) error {
+	res, err := a.prepareAndSend(ctx, http.MethodDelete, fmt.Sprintf("/trackings/%s/%s", slug, trackingNumber), nil)
+	if err != nil {
+		return err
+	}
+	if res.StatusCode != http.StatusOK {
+		return formatError(ErrUnexpectedResponseStatus, res)
+	}
+
+	return nil
 }

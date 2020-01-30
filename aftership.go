@@ -26,10 +26,15 @@ func New(key string) *AfterShip {
 }
 
 func (a *AfterShip) prepareAndSend(ctx context.Context, method, url string, body interface{}) (*http.Response, error) {
-	bodyJSON, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
+	var bodyJSON []byte
+	var err error
+	if body != nil {
+		bodyJSON, err = json.Marshal(body)
+		if err != nil {
+			return nil, err
+		}
 	}
+
 	req, err := http.NewRequestWithContext(ctx, method, "https://api.aftership.com/v4"+url, bytes.NewReader(bodyJSON))
 	if err != nil {
 		return nil, err
