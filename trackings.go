@@ -67,8 +67,8 @@ type Tracking struct {
 	ShipmentType               string                 `json:"shipment_type,omitempty"`
 	ShipmentWeight             float64                `json:"shipment_weight,omitempty"`
 	ShipmentWeightUnit         string                 `json:"shipment_weight_unit,omitempty"`
-	ShipmentPickupDate         time.Time              `json:"shipment_pickup_date,omitempty"`
-	ShipmentDeliveryDate       time.Time              `json:"shipment_delivery_date,omitempty"`
+	ShipmentPickupDate         string                 `json:"shipment_pickup_date,omitempty"`
+	ShipmentDeliveryDate       string                 `json:"shipment_delivery_date,omitempty"`
 	SignedBy                   string                 `json:"signed_by,omitempty"`
 	Source                     string                 `json:"source,omitempty"`
 	Tag                        Tag                    `json:"tag,omitempty"`
