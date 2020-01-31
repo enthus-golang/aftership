@@ -65,7 +65,7 @@ type Tracking struct {
 	PickupNote                 string                 `json:"pickup_note,omitempty"`
 	ShipmentPackageCount       int                    `json:"shipment_package_count,omitempty"`
 	ShipmentType               string                 `json:"shipment_type,omitempty"`
-	ShipmentWeight             string                 `json:"shipment_weight,omitempty"`
+	ShipmentWeight             int                    `json:"shipment_weight,omitempty"`
 	ShipmentWeightUnit         string                 `json:"shipment_weight_unit,omitempty"`
 	ShipmentPickupDate         time.Time              `json:"shipment_pickup_date,omitempty"`
 	ShipmentDeliveryDate       time.Time              `json:"shipment_delivery_date,omitempty"`
