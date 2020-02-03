@@ -28,9 +28,9 @@ const (
 
 type Tracking struct {
 	ID                         string                 `json:"id"`
-	CreatedAt                  time.Time              `json:"created_at"`
-	UpdatedAt                  time.Time              `json:"updated_at"`
-	LastUpdatedAt              time.Time              `json:"last_updated_at"`
+	CreatedAt                  string                 `json:"created_at"`
+	UpdatedAt                  string                 `json:"updated_at"`
+	LastUpdatedAt              string                 `json:"last_updated_at"`
 	Active                     bool                   `json:"active"`
 	TrackingNumber             string                 `json:"tracking_number"`
 	UniqueToken                string                 `json:"unique_token"`
@@ -51,7 +51,7 @@ type Tracking struct {
 	Title                      string                 `json:"title,omitempty"`
 	CustomerName               string                 `json:"customer_name,omitempty"`
 	DeliveryTime               int                    `json:"delivery_time"`
-	ExpectedDelivery           time.Time              `json:"expected_delivery"`
+	ExpectedDelivery           string                 `json:"expected_delivery"`
 	OriginCountryISO3          string                 `json:"origin_country_iso3,omitempty" validate:"len=3"`
 	DestinationCountryISO3     string                 `json:"destination_country_iso3,omitempty" validate:"len=3"`
 	OrderID                    string                 `json:"order_id,omitempty"`
