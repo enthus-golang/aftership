@@ -51,7 +51,7 @@ type Tracking struct {
 	Title                      string                 `json:"title,omitempty"`
 	CustomerName               string                 `json:"customer_name,omitempty"`
 	DeliveryTime               int                    `json:"delivery_time"`
-	ExpectedDelivery           string                 `json:"expected_delivery"`
+	ExpectedDelivery           *string                `json:"expected_delivery"`
 	OriginCountryISO3          string                 `json:"origin_country_iso3,omitempty" validate:"len=3"`
 	DestinationCountryISO3     string                 `json:"destination_country_iso3,omitempty" validate:"len=3"`
 	OrderID                    string                 `json:"order_id,omitempty"`
