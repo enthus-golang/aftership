@@ -13,17 +13,17 @@ type Tag string
 
 const (
 	PickupAtStore   DeliveryType = "pickup_at_store"
-	PickupAtCourier              = "pickup_at_courier"
-	DoorToDoor                   = "door_to_door"
+	PickupAtCourier DeliveryType = "pickup_at_courier"
+	DoorToDoor      DeliveryType = "door_to_door"
 
 	Pending        Tag = "Pending"
-	InfoReceived       = "InfoReceived"
-	InTransit          = "InTransit"
-	OutForDelivery     = "OutForDelivery"
-	AttemptFail        = "AttemptFail"
-	Delivered          = "Delivered"
-	Exception          = "Exception"
-	Expired            = "Expired"
+	InfoReceived   Tag = "InfoReceived"
+	InTransit      Tag = "InTransit"
+	OutForDelivery Tag = "OutForDelivery"
+	AttemptFail    Tag = "AttemptFail"
+	Delivered      Tag = "Delivered"
+	Exception      Tag = "Exception"
+	Expired        Tag = "Expired"
 )
 
 type Tracking struct {

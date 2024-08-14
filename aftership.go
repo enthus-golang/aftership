@@ -39,10 +39,14 @@ func (a *AfterShip) prepareAndSend(ctx context.Context, method, url string, body
 	if err != nil {
 		return nil, err
 	}
+
 	req.Header.Set("aftership-api-key", a.key)
 	req.Header.Set("Content-Type", "application/json")
 
 	b, err := httputil.DumpRequest(req, true)
+	if err != nil {
+		return nil, err
+	}
 	fmt.Println(string(b))
 
 	return http.DefaultClient.Do(req)
